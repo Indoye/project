@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtualenv
+.venv/
+venv/
+env/
+ENV/
+
+# Environment secrets — NEVER commit these
+.env
+*.env
+!.env.example
+
+# Databases (SQLite)
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated reports
+/tmp/cti_reports/
+cti_reports/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Docker volumes
+postgres_data/
