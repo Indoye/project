@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  cti-api:
+    build: .
+    container_name: cti_platform
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./cti.db:/app/cti.db
+      - /tmp/cti_reports:/tmp/cti_reports
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  # Uncomment to use PostgreSQL instead of SQLite
+  # db:
+  #   image: postgres:16-alpine
+  #   environment:
+  #     POSTGRES_USER: cti
+  #     POSTGRES_PASSWORD: cti_secret
+  #     POSTGRES_DB: cti_db
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+
+# volumes:
+#   postgres_data:
